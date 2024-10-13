@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AccessGranted
 {
-    public class Database
+    internal class Database
     {
         private readonly Faker faker = new();
     }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AccessGranted
 {
-    internal class CaseProvider
+    internal class Fault
     {
+
     }
 }

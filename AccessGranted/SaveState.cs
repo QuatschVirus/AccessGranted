@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace AccessGranted
 {
-    public enum Language
+    internal enum Language
     {
         CSharp,
         // Python, // TODO: Implement later
     }
 
-    public class SaveState
+    internal class SaveState
     {
         private const string path = "AccessGrantedSave.bin";
         private static string CorruptedPath => path + ".corrupted";
@@ -49,5 +49,7 @@ namespace AccessGranted
 
         public int StoryProgression { get; set; } = 0;
         public Language? Language { get; set; } = null;
+
+        public bool HasDatabase => StoryProgression >= 3;
     }
 }

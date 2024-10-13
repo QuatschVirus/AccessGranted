@@ -5,7 +5,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using AG_API;
+using AccessGranted.CaseManagement;
+using AccessGranted.API;
 using Microsoft.CSharp;
 
 
@@ -15,7 +16,7 @@ namespace AccessGranted.Languages
     {
         private CSharpCodeProvider provider;
         private CompilerParameters parameters;
-        private MethodInfo method;
+        private MethodInfo? method;
 
         public CSharpUserProgram()
         {
@@ -61,10 +62,10 @@ namespace AccessGranted.Languages
         }
 
         public bool RunCase()
-{
+{           if (method == null) return false;
             Case c = new(); // TODO: Replace with proper generation
             _ = method.Invoke(null, [c]);
-            return CaseHandler.Evaluate(c);
+            return true;
         }
     }
 }

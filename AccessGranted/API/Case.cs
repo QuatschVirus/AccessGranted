@@ -1,4 +1,4 @@
-﻿namespace AG_API
+﻿namespace AccessGranted.API
 {
     /// <summary>
     /// Allows you to manage the current case
